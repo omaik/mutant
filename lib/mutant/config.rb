@@ -63,7 +63,7 @@ module Mutant
         mutation_timeout:      other.mutation_timeout || mutation_timeout,
         requires:              requires + other.requires,
         zombie:                zombie || other.zombie,
-        compacted_log:             other.compacted_log || compacted_log
+        compacted_log:         other.compacted_log || compacted_log
       )
     end
     # rubocop:enable Metrics/AbcSize
