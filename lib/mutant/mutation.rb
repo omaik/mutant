@@ -7,7 +7,7 @@ module Mutant
     include Concord::Public.new(:subject, :node)
 
     CODE_DELIMITER = "\0"
-    CODE_RANGE     = (0..4).freeze
+    CODE_RANGE     = (..4).freeze
 
     # Mutation identification code
     #
@@ -69,7 +69,10 @@ module Mutant
         kernel:  kernel,
         source:  monkeypatch,
         subject: subject
-      )
+      ).fmap do
+        subject.post_insert
+        nil
+      end
     end
 
     # Rendered mutation diff

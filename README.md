@@ -58,12 +58,12 @@ Supported indicates if a specific Ruby version / Implementation is actively supp
 
 | Implementation | Version        | Runtime            | Syntax             | Mutations          | Supported          |
 | -------------- | -------------- | -------            | ------------------ | ------------------ | ------------------ |
-| cRUBY/MRI      | 2.6            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | cRUBY/MRI      | 2.7            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | cRUBY/MRI      | 3.0            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| cRUBY/MRI      | 3.1            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | jruby          | TBD            | :email:            | :email:            | :email:            | :email:            |
 | mruby          | TBD            | :email:            | :email:            | :email:            | :email:            |
-| cRUBY/MRI      | < 2.6          | :no_entry:         | :no_entry:         | :no_entry:         | :no_entry:         |
+| cRUBY/MRI      | < 2.7          | :no_entry:         | :no_entry:         | :no_entry:         | :no_entry:         |
 
 
 Labels:
@@ -129,11 +129,11 @@ For commercial use mutants pricing is subscription based.
 
 | Currency | No. Subscribers  | Duration | Cost    | Payment Methods                                       |
 | -------- | ---------------- |--------  | ------- | ----------------------------------------------------- |
-| USD      | any              | 1 month  | 30$     | Credit Card                                           |
-| USD      | any              | 1 year   | 300$    | Credit Card, ACH transfer                             |
+| USD      | any              | 1 month  | 90$     | Credit Card                                           |
+| USD      | any              | 1 year   | 900$    | Credit Card, ACH transfer                             |
 | USD      | >20              | custom   | custom  | Credit Card, ACH transfer, Wire transfer, custom      |
-| EUR      | any              | 1 month  | 25€     | Credit Card, SEPA Direct Debit                        |
-| EUR      | any              | 1 year   | 250€    | Credit Card, SEPA Direct Debit, SEPA Transfer         |
+| EUR      | any              | 1 month  | 75€     | Credit Card, SEPA Direct Debit                        |
+| EUR      | any              | 1 year   | 750€    | Credit Card, SEPA Direct Debit, SEPA Transfer         |
 | EUR      | >20              | custom   | custom  | Credit Card, SEPA Direct Debit, SEPA Transfer, custom |
 
 Should you want to procure a commercial mutant subscription please [mail me](mailto:mbj@schirp-dso.com?subject=Mutant%20Commercial%20License).
@@ -151,20 +151,11 @@ Also feel free to ask any other question I forgot to proactively answer here.
 
 Also checkout the [commercial FAQ](/docs/commercial.md).
 
-#### Pricing Why?
-
-The idea is to charge 1$ per developer per day. Mutant reduces the time spend on code reviews.
-
-This time saved should be worth way more than the 1$ per day.
-
-EUR prices are set to mirror USD prices, but avoid conversion losses at the customer.
-
 ## Topics
 
 * [Commercial use / private repositories](/docs/commercial.md)
 * [Nomenclature](/docs/nomenclature.md)
 * [Reading Reports](/docs/reading-reports.md)
-* [Known Problems](/docs/known-problems.md)
 * [Limitations](/docs/limitations.md)
 * [Concurrency](/docs/concurrency.md)
 * [Rspec Integration](/docs/mutant-rspec.md)
