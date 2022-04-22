@@ -1,3 +1,43 @@
+# v0.11.6 2022-04-10
+
+* [#1317](https://github.com/mbj/mutant/pull/1317)
+
+  Fix forward arg mutations.
+
+# v0.11.5 2022-04-03
+
+* [#1314](https://github.com/mbj/mutant/pull/1314)
+
+  Fix visibility of mutated methods to retain original value.
+
+  Fix: [#1242]
+
+* [#1311](https://github.com/mbj/mutant/pull/1311)
+
+  Change to fully enforced license.
+
+* [#1310](https://github.com/mbj/mutant/pull/1310)
+
+  Remove support for Ruby-2.6 as its EOL.
+
+* [#1309](https://github.com/mbj/mutant/pull/1309)
+
+  Change to ignore case mismatches in git repository names on license check.
+
+# v0.11.4 2022-02-13
+
+* [#1303](https://github.com/mbj/mutant/pull/1303)
+
+  Add full Ruby 3.1 support.
+
+# v0.11.3 2022-02-13
+
+* [#1302](https://github.com/mbj/mutant/pull/1302)
+
+  Change to parser/unparser that works on 3.1 syntax. This does not mean
+  mutant is yet fully 3.1 compatible. Mostly that mutant does not block the parser
+  dependency anymore. And unparser is ready for Ruby 3.1.
+
 # v0.11.2 2021-11-15
 
 * [#1285](https://github.com/mbj/mutant/pull/1283)
