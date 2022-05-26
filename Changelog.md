@@ -1,3 +1,62 @@
+# Unreleased
+
+* [#1332](https://github.com/mbj/mutant/pull/1332)
+
+  Fix incomplete mutations for regexp capture groups. As an example, `/(\w\d)/` now gets mutated to `/(\W\d)/` and `/(\w\D)/` instead of just the former case.
+
+  Fix capture group -> passive group mutations which would not get properly generated in many cases. As an example, `/(\w\d)/` would get mutated to `/(?:\w)/` instead of `/(?:\w\d)/` like it will now.
+
+# v0.11.10 2022-05-02
+
+* [#1328](https://github.com/mbj/mutant/pull/1328)
+
+  Fix incomplete mutations for named regexp capture groups. As an example, `/(?<name>\w\d)/` now gets mutated to `/(?<name>\W\d)/` and `/(?<name>\w\D)/` instead of just the former case.
+
+* [#1331](https://github.com/mbj/mutant/pull/1331)
+
+  Add graceful but urgent exit on SIGINT.
+
+# v0.11.9 2022-05-01
+
+* [#1327](https://github.com/mbj/mutant/pull/1327)
+
+  Add explicit mutation handler for xstr nodes.
+
+- [#1326](https://github.com/mbj/mutant/pull/1326)
+
+  Fix crash with certain block argument edge cases such as `foo { |(*)| }`.
+
+  Fix mutation from `foo { |(a, b)| }` to `foo { |(_a, b)| }` and `foo { |(a, _b)| }` instead of the less useful mutation to only `foo { |_a| }`.
+
+  Add `foo { |(a, b)| }` -> `foo { |a, b| }` mutation.
+
+* [#1324](https://github.com/mbj/mutant/pull/1324)
+
+  Remove useless `loop { code }` -> `loop { nil }` mutation.
+
+# v0.11.8 2022-04-25
+
+* [#1320](https://github.com/mbj/mutant/pull/1320)
+
+  Add inline mutant disable configuration. This allows individual subjects to be marked as
+  disbled directly in the code.
+
+  Use:
+
+  ```ruby
+  class Something
+    # mutant:disable
+    def some_method
+    end
+  end
+  ```
+
+# v0.11.7 2022-04-24
+
+* [#1319](https://github.com/mbj/mutant/pull/1319)
+
+  Fix regexp mapper to do full, ruby version specific unicode property mapping.
+
 # v0.11.6 2022-04-10
 
 * [#1317](https://github.com/mbj/mutant/pull/1317)
@@ -148,7 +207,7 @@
 
 * [#1234](https://github.com/mbj/mutant/pull/1234)
   Add mapping for latin regexp properties to fix crash on mutating
-  `p{Latin}` regexp nodes.
+  `\p{Latin}` regexp nodes.
 
   Fix: [#1231](https://github.com/mbj/mutant/issues/1231)
 
