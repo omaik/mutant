@@ -92,7 +92,6 @@ module Mutant
           emit_static_send
           emit_const_get_mutation
           emit_double_negation_mutation
-          emit_lambda_mutation
         end
 
         def emit_reduce_to_sum_mutation
@@ -182,10 +181,6 @@ module Mutant
 
           negated = AST::Meta::Send.new(meta.receiver)
           emit(negated.receiver) if negated.selector.equal?(:!)
-        end
-
-        def emit_lambda_mutation
-          emit(s(:send, nil, :lambda)) if meta.proc?
         end
 
         def emit_const_get_mutation
