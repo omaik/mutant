@@ -38,7 +38,6 @@ module Mutant
           send:          %i[public_send __send__],
           to_a:          %i[to_ary],
           to_h:          %i[to_hash],
-          to_i:          %i[to_int],
           to_s:          %i[to_str],
           values_at:     %i[fetch_values]
         }.freeze.tap { |hash| hash.values(&:freeze) }
@@ -92,7 +91,6 @@ module Mutant
           emit_array_mutation
           emit_static_send
           emit_const_get_mutation
-          emit_integer_mutation
           emit_dig_mutation
           emit_double_negation_mutation
           emit_lambda_mutation
@@ -201,12 +199,6 @@ module Mutant
           return emit(fetch_mutation) if tail.empty?
 
           emit(s(:send, fetch_mutation, :dig, *tail))
-        end
-
-        def emit_integer_mutation
-          return unless selector.equal?(:to_i)
-
-          emit(s(:send, nil, :Integer, receiver))
         end
 
         def emit_const_get_mutation
