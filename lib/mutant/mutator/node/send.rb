@@ -91,7 +91,6 @@ module Mutant
           emit_array_mutation
           emit_static_send
           emit_const_get_mutation
-          emit_dig_mutation
           emit_double_negation_mutation
           emit_lambda_mutation
         end
@@ -187,18 +186,6 @@ module Mutant
 
         def emit_lambda_mutation
           emit(s(:send, nil, :lambda)) if meta.proc?
-        end
-
-        def emit_dig_mutation
-          return if !selector.equal?(:dig) || arguments.none?
-
-          head, *tail = arguments
-
-          fetch_mutation = s(:send, receiver, :fetch, head)
-
-          return emit(fetch_mutation) if tail.empty?
-
-          emit(s(:send, fetch_mutation, :dig, *tail))
         end
 
         def emit_const_get_mutation
