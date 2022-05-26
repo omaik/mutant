@@ -284,6 +284,7 @@ module Mutant
       mutation_timeout:      nil,
       reporter:              Reporter::CLI.build(WORLD.stdout),
       requires:              EMPTY_ARRAY,
+      compacted_log:         nil,
       zombie:                false
     )
   end # Config
